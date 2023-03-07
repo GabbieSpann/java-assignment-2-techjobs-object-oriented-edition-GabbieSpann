@@ -30,14 +30,14 @@ public class PositionType {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PositionType)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         PositionType that = (PositionType) o;
-        return id == that.id && value.equals(that.value);
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, value);
+        return Objects.hash(id);
     }
 
     // Getters and Setters:

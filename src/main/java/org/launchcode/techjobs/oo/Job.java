@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Job {
+public class Job extends JobField {
 
     private int id;
     private static int nextId = 1;
@@ -18,6 +18,7 @@ public class Job {
     //  the 'id' field.
 
     public Job(){
+
         this.id = ++nextId;
     }
 
@@ -96,11 +97,11 @@ public class Job {
 
     @Override
     public String toString(){
-        return "\nID" + getId() + "\n" +
-                "Name:" + getName()+ "\n" +
-                "Employer:" + getEmployer() +"\n" +
-                "Location:" + getLocation()+ "\n" +
-                "Position Type:" + getPositionType()+ "\n" +
-                "Core Competency:" + getCoreCompetency()+ "\n";
+        return "\nId: " + getId() + "\n" +
+                "Name: " + getName()+ "\n" +
+                "Employer: " + getEmployer() +"\n" +
+                "Location: " + getLocation()+ "\n" +
+                "Position Type: " + getPositionType()+ "\n" +
+                "Core Competency: " + getCoreCompetency()+ "\n";
     }
 }

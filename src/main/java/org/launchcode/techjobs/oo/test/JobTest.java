@@ -72,6 +72,7 @@ public class JobTest {
         Job testJob = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String jobString = testJob.toString();
-        Assert.assertTrue(jobString.contains("Data Not Available"));
+        Assert.assertTrue(jobString.contains("Data not available"));
+        Assert.assertEquals(jobString, testJob.toString());
     }
 }

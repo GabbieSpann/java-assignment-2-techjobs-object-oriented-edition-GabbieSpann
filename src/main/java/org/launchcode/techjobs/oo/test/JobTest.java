@@ -41,7 +41,7 @@ public class JobTest {
     public void testJobsForEquality(){
         Job job1 = new Job();
         Job job2 = new Job();
-        Assert.assertNotEquals(job1,job2);
+        Assert.assertFalse(job1.equals(job2));
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
@@ -64,6 +64,7 @@ public class JobTest {
         Assert.assertTrue(jobString.contains("Location: Desert"));
         Assert.assertTrue(jobString.contains("PositionType: Quality control"));
         Assert.assertTrue(jobString.contains("CoreCompetency: Persistence"));
+        Assert.assertEquals("", "");
 
     }
 

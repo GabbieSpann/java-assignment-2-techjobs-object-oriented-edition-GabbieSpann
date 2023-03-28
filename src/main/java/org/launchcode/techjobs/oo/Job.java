@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Job extends JobField {
+public class Job{
 
     private int id;
     private static int nextId = 1;
@@ -34,17 +34,19 @@ public class Job extends JobField {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+
+        return Objects.hash(id);
     }
 
 
@@ -97,7 +99,7 @@ public class Job extends JobField {
 
     @Override
     public String toString(){
-        return "\nId: " + getId() + "\n" +
+        return "\nID: " + getId() + "\n" +
                 "Name: " + getName()+ "\n" +
                 "Employer: " + getEmployer() +"\n" +
                 "Location: " + getLocation()+ "\n" +
